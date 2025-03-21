@@ -1,50 +1,126 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# api-food-stack
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="api-food-stack package" src=".github/assets/heroImageReposytory-node.png"></a>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+**Important Links**
 
-## Description
+- [![npm package][npm-img]][npm-url]
+- [![Build Status][build-img]][build-url]
+- [![GitHub Contributors][github-contributors-badge]][github-contributors-badge-link]
+- [Author page]({{PLACEHOLDER_PAGE_AUTHOR}})
+- [Git Hooks Documentation](.husky/README.md)
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+<br/><br/>
 
-## Project setup
+**Remove before final release**
+
+- [Set up your repository](docs/HowToAutoDeploy.md)
+- [Way to work](docs/WayToWrok.md)
+- [Known issues](docs/knowProblems.md)
+
+---
+
+<br/>
+
+foodStack api
+
+## Usage
+
+swagger
+
+### Integrated features
+
+Don't worry, with this template you will anyways get all the awesomeness you need:
+
+- 📦 **[s-update-manager](https://github.com/SebastianWesolowski/s-update-manager)** - Manage your dependencies with centralized repozystory
+- 🎨 **[s-customize](https://github.com/SebastianWesolowski/s-template/tools/customize)** - Customize your repozytory with one command
+- 🌐 **[ngrok](https://ngrok.com/)** - For local development with remote services
+- ✨ **[ESlint](https://eslint.org/)** and **[Prettier](https://prettier.io/)** - For clean, consistent, and error-free code
+- 🛠️ **[Extremely strict TypeScript](https://www.typescriptlang.org/)** - With [`ts-reset`](https://github.com/total-typescript/ts-reset) library for ultimate type safety
+- 🚀 **[GitHub Actions](https://github.com/features/actions)** - Pre-configured actions for smooth workflows, including Bundle Size and performance stats
+- **[Jest](https://jestjs.io/)** - For rock-solid unit and integration tests
+- **Smoke Testing** and **Acceptance Tests** - For confidence in your deployments
+- **[Conventional commits git hook](https://www.conventionalcommits.org/)** - Keep your commit history neat and tidy
+- **[Absolute imports](https://nextjs.org/docs/advanced-features/module-path-aliases)** - No more spaghetti imports
+- **[Patch-package](https://www.npmjs.com/package/patch-package)** - Fix external dependencies without losing your mind
+- **Components coupling and cohesion graph** - A tool for managing component relationships
+- **[Semantic Release](https://github.com/semantic-release/semantic-release)** - for automatic changelog
+- **[Husky](https://typicode.github.io/husky/)** - Git hooks made easy (see [Git Hooks Documentation](.husky/README.md))
+
+## 🎯 Getting Started
+
+To get started with this boilerplate, follow these steps:
+
+1. Install the dependencies:
 
 ```bash
-$ npm install
+yarn install
 ```
 
-## Compile and run the project
+2. Run the update witch s-update-manager:
 
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+yarn s-update-manager
 ```
 
-## Run tests
+3. Set up your repository
+
+Replace variable in the `./tools/customize/customize.config.ts` script with your own details to personalize your new package:
+
+```bash
+export const config: CustomizeConfig = {
+  replacements: [
+    {
+      placeholder: "{{PLACEHOLDER_FULL_NAME_EXAMPLE}}",
+      value: "Sebastian Wesolowski",
+      files: [
+        "package.json",
+        "README.md",
+        "./docs/HowToAutoDeploy.md",
+        ".github/FUNDING.yml",
+      ],
+    },
+    {
+      placeholder: "{{PLACEHOLDER_PAGE_AUTHOR_EXAMPLE}}",
+      value: "www.wesolowski.dev",
+      files: [".github/FUNDING.yml", "package.json", "LICENSE"],
+    },
+    ...
+```
+
+You can look on example in `./tools/customize/customize.example.config.ts`
+
+Run script with:
+
+```bash
+yarn customize
+```
+
+or
+
+```bash
+tsx tools/customize/customize.ts
+```
+
+4. Optional
+
+- 4.1. Add ngrok token in .env file for local development
+
+  ```bash
+   NGROK_AUTH_TOKEN=your_ngrok_token
+  ```
+
+  after that you can run ngrok to expose your local server to the internet:
+
+  ```bash
+    yarn dev:tunnel
+  ```
+
+  [![ngrok](./.github/assets/ngrok.png)](https://dashboard.ngrok.com/get-started/setup/macos)
+
+5. Run the development server:
+
+## Deployment
 
 ```bash
 # unit tests
@@ -57,8 +133,6 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Deployment
-
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
 
 If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
@@ -70,29 +144,74 @@ $ mau deploy
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
 
-## Resources
+```bash
+yarn dev
+```
 
-Check out a few resources that may come in handy when working with NestJS:
+## 🔗 Coupling Graph
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+The `coupling-graph` script is a useful tool that helps visualize the coupling and connections between your project's internal modules. It's built using the [Madge](https://github.com/pahen/madge) library. To generate the graph, simply run the following command:
 
-## Support
+```bash
+yarn coupling-graph
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+This will create a `graph.svg` file, which contains a graphical representation of the connections between your components. You can open the file with any SVG-compatible viewer.
 
-## Stay in touch
+![graph](.github/assets/couplingGraph-node.png)
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+## Badges
 
-## License
+[![Downloads][downloads-img]][downloads-url]
+[![Issues][issues-img]][issues-url]
+[![Commitizen Friendly][commitizen-img]][commitizen-url]
+[![Semantic Release][semantic-release-img]][semantic-release-url]
+[![GitHub License][github-license-badge]][github-license-badge-link]
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+[build-img]: https://github.com/SebastianWesolowski/api-food-stack/actions/workflows/release.yml/badge.svg
+[build-url]: https://github.com/SebastianWesolowski/api-food-stack/actions/workflows/release.yml
+[downloads-img]: https://img.shields.io/npm/dt/api-food-stack
+[downloads-url]: https://www.npmtrends.com/api-food-stack
+[npm-img]: https://img.shields.io/npm/v/api-food-stack
+[npm-url]: https://www.npmjs.com/package/api-food-stack
+[issues-img]: https://img.shields.io/github/issues/SebastianWesolowski/api-food-stack
+[issues-url]: https://github.com/SebastianWesolowski/api-food-stack/issues
+[semantic-release-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-release-url]: https://github.com/semantic-release/semantic-release
+[commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
+[commitizen-url]: http://commitizen.github.io/cz-cli/
+[github-license-badge]: https://img.shields.io/github/license/SebastianWesolowski/api-food-stack
+[github-license-badge-link]: https://github.com/SebastianWesolowski/api-food-stack/blob/main/LICENSE
+[github-contributors-badge]: https://img.shields.io/github/contributors/SebastianWesolowski/api-food-stack
+[github-contributors-badge-link]: https://github.com/SebastianWesolowski/api-food-stack/graphs/contributors
+
+## Testowanie API
+
+Po uruchomieniu aplikacji, możesz przetestować API używając poniższych endpointów:
+
+- `GET /api/start` - Zwraca dane startowe, w tym listę użytkowników
+- `GET /api/user/:id` - Zwraca dane pojedynczego użytkownika
+
+### Przykłady użycia
+
+#### Pobieranie danych startowych:
+
+```bash
+curl http://localhost:3000/api/start
+```
+
+#### Pobieranie danych użytkownika:
+
+```bash
+curl http://localhost:3000/api/user/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d
+```
+
+## Generowanie schematów dla frontendu
+
+Aby wygenerować schematy dla aplikacji frontendowej:
+
+```bash
+npm run zod:generate
+```
+
+Schematy zostaną wygenerowane w katalogu `../frontend/types/zod-schemas`.
