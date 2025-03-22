@@ -1,10 +1,10 @@
 // Model danych użytkownika
 import { z } from 'zod';
-import { UserSchema } from '../schemas/user.schema';
+import { UserSchema } from './user.schema';
 
 export type User = z.infer<typeof UserSchema>;
 
-export const mockUsers: User[] = [
+export const mockUsers: any[] = [
   {
     id: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
     name: 'Jan Kowalski',

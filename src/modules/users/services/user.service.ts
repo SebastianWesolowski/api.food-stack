@@ -1,6 +1,6 @@
 // Serwis do obsługi danych użytkowników
 import { Injectable } from '@nestjs/common';
-import { mockUsers, User } from '../../../models/user.model';
+import { mockUsers, User } from '@modules/users/entities/user.model';
 
 @Injectable()
 export class UserService {

@@ -1,9 +1,9 @@
 import { INestApplication } from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import request from 'supertest';
-import { AppModule } from '../app.module';
-import { ApiResponseSchema } from '../schemas/api-response.schema';
-import { UserSchema } from '../schemas/user.schema';
+import { AppModule } from '@/app.module';
+import { ApiResponseSchema } from '@common/schemas/api-response.schema';
+import { UserSchema } from '@modules/users/entities/user.schema';
 
 describe('API (e2e)', () => {
   let app: INestApplication;
