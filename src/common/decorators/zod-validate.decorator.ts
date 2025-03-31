@@ -2,9 +2,9 @@ import { UseFilters } from '@nestjs/common';
 import { ZodSchema } from 'zod';
 import { ZodValidationFilter } from '../filters/zod-validation.filter';
 
-export const ZodValidate = <T>(
-  schema: ZodSchema<T>,
-  validateResponse = true,
+export const ZodValidate = <TInput, TOutput>(
+  paramSchema?: ZodSchema<TInput>,
+  responseSchema?: ZodSchema<TOutput>,
 ) => {
   return function (
     target: object,
@@ -16,9 +16,9 @@ export const ZodValidate = <T>(
     ) => Promise<unknown>;
 
     descriptor.value = async function (...args: unknown[]) {
-      // Walidacja parametrów (jeśli są)
-      if (args.length > 0) {
-        const paramResult = schema.safeParse(args[0]);
+      // Walidacja parametrów wejściowych
+      if (paramSchema && args.length > 0) {
+        const paramResult = paramSchema.safeParse(args[0]);
         if (!paramResult.success) {
           throw Object.assign(paramResult.error, { _type: 'params' });
         }
@@ -29,8 +29,8 @@ export const ZodValidate = <T>(
       const result = await originalMethod.apply(this, args);
 
       // Walidacja odpowiedzi
-      if (validateResponse) {
-        const responseResult = schema.safeParse(result);
+      if (responseSchema) {
+        const responseResult = responseSchema.safeParse(result);
         if (!responseResult.success) {
           throw Object.assign(responseResult.error, { _type: 'response' });
         }

@@ -22,6 +22,13 @@
   dependencies:
     randexp "^0.5.3"
 
+"@anatine/zod-nestjs@^2.0.10":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@anatine/zod-nestjs/-/zod-nestjs-2.0.10.tgz#b59a189d0bced3d1dc351f068fa9695dea6980a9"
+  integrity sha512-90TVowUCqlz7IwNf6EkrtHSTILeSwFnwWIhVDIEYPCdgfO+vVkASiT8RO+Q/olwuo3OxNef9fBDimIDxZMWzcg==
+  dependencies:
+    ts-deepmerge "^6.1.0"
+
 "@anatine/zod-openapi@^2.2.7":
   version "2.2.7"
   resolved "https://registry.yarnpkg.com/@anatine/zod-openapi/-/zod-openapi-2.2.7.tgz#c3309559bd6d9465edaf60bad1d28853a18e5552"
@@ -2493,6 +2500,11 @@
   dependencies:
     "@types/methods" "^1.1.4"
     "@types/superagent" "^8.1.0"
+
+"@types/uuid@^10.0.0":
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-10.0.0.tgz#e9c07fe50da0f53dc24970cca94d619ff03f6f6d"
+  integrity sha512-7gqG38EyHgyP1S+7+xomFtL+ZNHcKv6DwNaCZmJmo1vgMugyF3TCnXVg4t1uk89mLNwnLtnY3TpOpCOyp1/xHQ==
 
 "@types/yargs-parser@*":
   version "21.0.3"
@@ -11234,6 +11246,24 @@ rxjs@^7.5.5, rxjs@^7.8.1, rxjs@^7.8.2:
   dependencies:
     tslib "^2.1.0"
 
+"s-nestjs-module-llm@file:../s-nestjs-module-llm":
+  version "0.0.0-development"
+  dependencies:
+    "@nestjs/common" "^11.0.12"
+    "@nestjs/config" "^3.2.0"
+    "@nestjs/core" "^11.0.12"
+    "@nestjs/platform-express" "^11.0.12"
+    "@nestjs/swagger" "^11.0.7"
+    "@types/node" "^22.13.1"
+    cpy-cli "^5.0.0"
+    fs-extra "^11.2.0"
+    npm-run-all "^4.1.5"
+    openapi3-ts "^4.4.0"
+    reflect-metadata "^0.2.2"
+    rimraf "^6.0.1"
+    rxjs "^7.8.2"
+    typescript "^5.7.3"
+
 s-prettier@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/s-prettier/-/s-prettier-1.1.0.tgz#c33b10ca0c2c67cfb68579d5a166475ee892e6b2"
@@ -12194,12 +12224,22 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
+swagger-themes@^1.4.3:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/swagger-themes/-/swagger-themes-1.4.3.tgz#b2a0abddffe9a41ccc7e40f0cf9ea8a4b1b50a48"
+  integrity sha512-1G0CqJC1IBbNxkAOyJoREd9hfwXH1R6+3GOFxLhQho2w2i+AbaJqkF4mTJhkce4yhaEMUXvv4KKu1YO/qpe6nQ==
+
 swagger-ui-dist@5.20.1:
   version "5.20.1"
   resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-5.20.1.tgz#9aa6012cd537a9d3feac2d9e814d97bb36459824"
   integrity sha512-qBPCis2w8nP4US7SvUxdJD3OwKcqiWeZmjN2VWhq2v+ESZEXOP/7n4DeiOiiZcGYTKMHAHUUrroHaTsjUWTEGw==
   dependencies:
     "@scarf/scarf" "=1.4.0"
+
+swagger-ui-themes@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/swagger-ui-themes/-/swagger-ui-themes-3.0.1.tgz#2b67b1f67c20cad9e41758d7176b5a48ec2dee11"
+  integrity sha512-oQpH1uVJVio5R453YvyF3CJzwoEnIfJvWlwwFA0g4AX2NvnnjaT9wAT5kbFLs8pFhfGeq/mA/VlTOFYllm5Rzg==
 
 symbol-observable@4.0.0:
   version "4.0.0"
@@ -12465,7 +12505,7 @@ ts-api-utils@^2.0.0, ts-api-utils@^2.0.1:
   resolved "https://registry.yarnpkg.com/ts-api-utils/-/ts-api-utils-2.0.1.tgz#660729385b625b939aaa58054f45c058f33f10cd"
   integrity sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w==
 
-ts-deepmerge@^6.0.3:
+ts-deepmerge@^6.0.3, ts-deepmerge@^6.1.0:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/ts-deepmerge/-/ts-deepmerge-6.2.1.tgz#4d564b44bc2a69e35a0b08bfa904ef176372e7dd"
   integrity sha512-8CYSLazCyj0DJDpPIxOFzJG46r93uh6EynYjuey+bxcLltBeqZL7DMfaE5ZPzZNFlav7wx+2TDa/mBl8gkTYzw==

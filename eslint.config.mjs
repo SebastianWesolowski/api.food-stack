@@ -25,6 +25,7 @@ export const eslintIgnore = [
   '.commitlintrc.js',
   '.releaserc.js',
   'tools/ngrok-auth.js',
+  '*e2e-spec.ts',
 ];
 
 export const eslintFiles = ['./src/**/*.+(js|ts)', './**/*.test.+(js|ts)'];
@@ -112,7 +113,6 @@ export default typescriptEslint.config(
       prettier: eslintPluginPrettier,
     },
     rules: {
-      'prettier/prettier': 'warn',
       'security/detect-eval-with-expression': 'warn',
       'security/detect-no-csrf-before-method-override': 'warn',
       'security/detect-possible-timing-attacks': 'warn',
@@ -124,6 +124,8 @@ export default typescriptEslint.config(
       '@typescript-eslint/ban-ts-comment': 'warn',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/no-unsafe-argument': 'warn',
+      '@typescript-eslint/no-unsafe-assignment': 'warn',
+      '@typescript-eslint/no-unsafe-call': 'warn',
       '@typescript-eslint/await-thenable': 'warn',
       '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
       '@typescript-eslint/no-misused-promises': 'warn',

@@ -1,0 +1,98 @@
+[
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/decorators/zod-validate.decorator.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/decorators/zod-validate.decorator.ts",
+        "id": "HKRNSWinfVBoQg9s"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/main.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/main.ts",
+        "id": "sery2I470kYLzjdQ"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/package.json",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "package.json",
+        "id": "EBGlqjnC8UAy05Sw"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/eslint.config.mjs",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "eslint.config.mjs",
+        "id": "x29B4wsNd80FRMkE"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/eslint.config.strict.mjs",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "eslint.config.strict.mjs",
+        "id": "72o9KSVy6JrMRPuA"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/jest-e2e.json",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "jest-e2e.json",
+        "id": "RzP1l46sirGf8dNb"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/test/create-test-app.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/test/create-test-app.ts",
+        "id": "74yF0HqRcnVlj1Nw"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/test/zod-error.utils.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/test/zod-error.utils.ts",
+        "id": "AcsEJShUY3DTfC5y"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/schemas/api-response.schema.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/schemas/api-response.schema.ts",
+        "id": "PUDthMWCK4o729ns"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/schemas/validation-error.schema.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/schemas/validation-error.schema.ts",
+        "id": "v0jqtaHRkiZxeALV"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/interceptors/api-response.interceptor.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/interceptors/api-response.interceptor.ts",
+        "id": "F0WapThvo7cKAXQx"
+    },
+    {
+        "type": "File",
+        "name": "/Users/sebastian/web/api-foodStack/src/common/filters/zod-validation.filter.ts",
+        "parent_id": null,
+        "workspaceRoot": "/Users/sebastian/web/api-foodStack",
+        "workspacePath": "src/common/filters/zod-validation.filter.ts",
+        "id": "Tp3zK9Mq0XPGjbfr"
+    }
+]

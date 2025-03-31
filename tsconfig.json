@@ -49,6 +49,6 @@
     "noImplicitThis": true,
     "alwaysStrict": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "@types", "src/test/**/*.ts"],
+  "include": ["src/**/*", "*.config.ts", "src/**/*.d.ts", "@types"],
   "exclude": ["node_modules", "dist", "coverage"]
 }
