@@ -8,7 +8,7 @@ import {
   expectZodError,
   ValidationErrorResponse,
 } from '@/common/test/zod-error.utils';
-import { mockDiets } from '@/modules/diets/__mocks__/diet.mocks';
+import { GeneratedDietType } from '@/modules/diets/types/diet.schema';
 import { mockUsers } from '@/modules/users/__mocks__/user.mocks';
 
 describe('DietsController (e2e)', () => {
@@ -29,10 +29,18 @@ describe('DietsController (e2e)', () => {
       const testUserId = mockUsers[0].id;
       return supertest(httpServer)
         .post('/diets/generate')
-        .send({ userId: testUserId, numberOfDays: 1 })
+        .send({ userId: testUserId, numberOfDays: 2 })
         .expect(201)
-        .expect((res: { body: any }) => {
-          expect(res.body).toEqual(mockDiets);
+        .expect((res: { body: GeneratedDietType[] }) => {
+          expect(res.body).toHaveLength(2);
+          expect(res.body[0]).toMatchObject({
+            dietId: expect.any(String),
+            name: expect.any(String),
+            description: expect.any(String),
+            ingredients: expect.any(Array),
+            instructions: expect.any(Array),
+            assignedDate: expect.stringMatching(/^\d{4}-\d{2}-\d{2}$/),
+          });
         });
     });
 

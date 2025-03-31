@@ -1,6 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
+import { Body, Controller, Post, UseInterceptors } from '@nestjs/common';
 import { ApiBody, ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ZodValidate } from '@/common/decorators/zod-validate.decorator';
+import { AddAssignedDateInterceptor } from '@/common/interceptors/add-assigned-date.interceptor';
 import { dietExamples } from '@/modules/diets/__mocks__/diet.examples';
 import { DietsService } from './diets.service';
 import {
@@ -26,6 +27,7 @@ export class DietsController {
     status: 400,
     description: 'Nieprawidłowe dane wejściowe',
   })
+  @UseInterceptors(AddAssignedDateInterceptor)
   @ZodValidate(GenerateDietRequestSchema, GeneratedDietSchema.array())
   generateDiet(@Body() data: GenerateDietRequestType): GeneratedDietType[] {
     return this.dietsService.generateDiet(data);

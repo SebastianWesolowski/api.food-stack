@@ -7,6 +7,7 @@ export const GeneratedDietSchema = z.strictObject({
   description: z.string(),
   ingredients: z.array(z.string()),
   instructions: z.array(z.string()),
+  assignedDate: z.string().optional(), // format YYYY-MM-DD
 });
 export class GeneratedDietDto extends createZodDto(GeneratedDietSchema) {}
 export type GeneratedDietType = z.infer<typeof GeneratedDietSchema>;

@@ -68,6 +68,7 @@ const config = typescriptEslint.config(
       '@typescript-eslint/no-unsafe-assignment': 'error',
       '@typescript-eslint/no-unsafe-call': 'error',
       '@typescript-eslint/await-thenable': 'error',
+      '@typescript-eslint/no-unsafe-return': 'error',
       '@typescript-eslint/no-unnecessary-type-assertion': 'error',
       '@typescript-eslint/no-misused-promises': 'error',
       '@typescript-eslint/no-unused-vars': [

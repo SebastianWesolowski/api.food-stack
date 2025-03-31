@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { mockDiets } from '@/modules/diets/__mocks__/diet.mocks';
+import { v4 as uuidv4 } from 'uuid';
 import { GeneratedDietType, GenerateDietRequestDto } from './types/diet.schema';
 import { UsersService } from '../users/users.service';
 
@@ -7,15 +7,51 @@ import { UsersService } from '../users/users.service';
 export class DietsService {
   constructor(private readonly usersService: UsersService) {}
 
-  generateDiet(data: GenerateDietRequestDto): GeneratedDietType[] {
-    const userData = this.usersService.getUserById({ id: data.userId });
+  generateDiet({
+    userId,
+    numberOfDays,
+  }: GenerateDietRequestDto): GeneratedDietType[] {
+    const userData = this.usersService.getUserById({ id: userId });
 
     if (!userData) {
       throw new Error('Nie znaleziono preferencji użytkownika');
     }
 
-    //model llm
+    // const llm = new LLMModule();
 
-    return mockDiets;
+    // const response = (await llm.completion(
+    //   [
+    //     summarizationPrompt,
+    //     {
+    //       role: 'user',
+    //       content: 'Please create/update our conversation summary.',
+    //     },
+    //   ],
+    //   'gpt-4o-mini',
+    //   false,
+    // )) as OpenAI.Chat.Completions.ChatCompletion;
+    // return response.choices[0].message.content ?? 'No conversation history';
+
+    const diets: GeneratedDietType[] = Array.from(
+      { length: numberOfDays },
+      (_, index) => ({
+        dietId: uuidv4(),
+        name: `Dieta na dzień ${index + 1}`,
+        description: `Plan diety ${userData.preferences.dietType} na dzień ${index + 1}`,
+        ingredients: [
+          ...(userData.preferences.restrictions?.map((r) => `Zgodne z ${r}`) ||
+            []),
+          ...(userData.preferences.preferences?.map(
+            (p) => `Uwzględniono ${p}`,
+          ) || []),
+        ],
+        instructions: [
+          `Przygotowanie diety ${userData.preferences.dietType}`,
+          'Instrukcje szczegółowe...',
+        ],
+      }),
+    );
+
+    return diets;
   }
 }
