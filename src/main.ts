@@ -1,7 +1,6 @@
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { SwaggerTheme, SwaggerThemeNameEnum } from 'swagger-themes';
 import { AppModule } from './app.module';
 import { ZodValidationFilter } from './common/filters/zod-validation.filter';
 import { ApiResponseInterceptor } from './common/interceptors/api-response.interceptor';
@@ -13,10 +12,8 @@ async function bootstrap() {
   app.useGlobalInterceptors(new ApiResponseInterceptor());
   app.useGlobalFilters(new ZodValidationFilter(configService));
 
-  const theme = new SwaggerTheme();
   const options = {
     explorer: true,
-    customCss: theme.getBuffer(SwaggerThemeNameEnum.DARK),
   };
 
   const config = new DocumentBuilder()

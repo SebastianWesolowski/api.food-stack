@@ -1,4 +1,5 @@
 // Narzędzia pomocnicze do testowania błędów walidacji Zod
+import { expect } from 'chai';
 
 export interface ValidationError {
   validation: {

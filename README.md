@@ -1,6 +1,6 @@
-# api-food-stack
+# api.food-stack
 
-<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="api-food-stack package" src=".github/assets/heroImageReposytory-node.png"></a>
+<a href="https://github.com/SebastianWesolowski/starter-npm-package"><img align="left" width="440" height="180" alt="api.food-stack package" src=".github/assets/heroImageReposytory-node.png"></a>
 
 **Important Links**
 
@@ -168,22 +168,22 @@ This will create a `graph.svg` file, which contains a graphical representation o
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 [![GitHub License][github-license-badge]][github-license-badge-link]
 
-[build-img]: https://github.com/SebastianWesolowski/api-food-stack/actions/workflows/release.yml/badge.svg
-[build-url]: https://github.com/SebastianWesolowski/api-food-stack/actions/workflows/release.yml
-[downloads-img]: https://img.shields.io/npm/dt/api-food-stack
-[downloads-url]: https://www.npmtrends.com/api-food-stack
-[npm-img]: https://img.shields.io/npm/v/api-food-stack
-[npm-url]: https://www.npmjs.com/package/api-food-stack
-[issues-img]: https://img.shields.io/github/issues/SebastianWesolowski/api-food-stack
-[issues-url]: https://github.com/SebastianWesolowski/api-food-stack/issues
+[build-img]: https://github.com/SebastianWesolowski/api.food-stack/actions/workflows/release.yml/badge.svg
+[build-url]: https://github.com/SebastianWesolowski/api.food-stack/actions/workflows/release.yml
+[downloads-img]: https://img.shields.io/npm/dt/api.food-stack
+[downloads-url]: https://www.npmtrends.com/api.food-stack
+[npm-img]: https://img.shields.io/npm/v/api.food-stack
+[npm-url]: https://www.npmjs.com/package/api.food-stack
+[issues-img]: https://img.shields.io/github/issues/SebastianWesolowski/api.food-stack
+[issues-url]: https://github.com/SebastianWesolowski/api.food-stack/issues
 [semantic-release-img]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]: https://github.com/semantic-release/semantic-release
 [commitizen-img]: https://img.shields.io/badge/commitizen-friendly-brightgreen.svg
 [commitizen-url]: http://commitizen.github.io/cz-cli/
-[github-license-badge]: https://img.shields.io/github/license/SebastianWesolowski/api-food-stack
-[github-license-badge-link]: https://github.com/SebastianWesolowski/api-food-stack/blob/main/LICENSE
-[github-contributors-badge]: https://img.shields.io/github/contributors/SebastianWesolowski/api-food-stack
-[github-contributors-badge-link]: https://github.com/SebastianWesolowski/api-food-stack/graphs/contributors
+[github-license-badge]: https://img.shields.io/github/license/SebastianWesolowski/api.food-stack
+[github-license-badge-link]: https://github.com/SebastianWesolowski/api.food-stack/blob/main/LICENSE
+[github-contributors-badge]: https://img.shields.io/github/contributors/SebastianWesolowski/api.food-stack
+[github-contributors-badge-link]: https://github.com/SebastianWesolowski/api.food-stack/graphs/contributors
 
 ## Testowanie API
 

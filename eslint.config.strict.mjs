@@ -16,7 +16,18 @@ const config = typescriptEslint.config(
     ignores: eslintIgnore,
     files: eslintFiles,
   },
-  { ...typescriptEslintConfig },
+  {
+    languageOptions: {
+      parser: typescriptEslint.parser,
+      parserOptions: {
+        project: ['./tsconfig.json', './tsconfig.e2e.json'],
+        tsconfigRootDir: process.cwd(),
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+      },
+    },
+    ignores: eslintIgnore,
+  },
   typescriptEslintConfigRecommended,
   jsEslint,
   eslintPluginImportConfig,

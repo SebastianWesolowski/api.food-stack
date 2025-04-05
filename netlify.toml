@@ -1,0 +1,17 @@
+# https://api-food-stack.netlify.app
+
+[build]
+  command = "yarn build:prod"
+  publish = "dist"
+
+[functions]
+  directory = "dist/functions"
+  node_bundler = "esbuild"
+
+[functions.server]
+  external_node_modules = ["@nestjs/microservices", "@nestjs/websockets", "class-validator", "class-transformer"]
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200

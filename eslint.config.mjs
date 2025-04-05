@@ -1,12 +1,11 @@
 import eslint from '@eslint/js';
-import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginImport from 'eslint-plugin-import';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
 import eslintPluginSecurity from 'eslint-plugin-security';
 import eslintPluginUnusedImports from 'eslint-plugin-unused-imports';
-import globals from 'globals';
+import * as typescriptEslint from 'typescript-eslint';
 import * as fs from 'fs';
 import path from 'path';
-import * as typescriptEslint from 'typescript-eslint';
 
 export const eslintIgnore = [
   'node_modules/',
@@ -25,7 +24,7 @@ export const eslintIgnore = [
   '.commitlintrc.js',
   '.releaserc.js',
   'tools/ngrok-auth.js',
-  '*e2e-spec.ts',
+  '**/*.e2e-spec.ts',
 ];
 
 export const eslintFiles = ['./src/**/*.+(js|ts)', './**/*.test.+(js|ts)'];
@@ -34,10 +33,14 @@ export const typescriptEslintConfig = {
   languageOptions: {
     parser: typescriptEslint.parser,
     parserOptions: {
-      project: './tsconfig.json',
+      project: ['./tsconfig.json'],
       tsconfigRootDir: process.cwd(),
       ecmaVersion: 'latest',
       sourceType: 'module',
+    },
+    globals: {
+      process: 'readonly',
+      console: 'readonly',
     },
   },
   ignores: eslintIgnore,
@@ -60,6 +63,7 @@ export const eslintPluginsConfig = {
   'unused-imports': eslintPluginUnusedImports,
   security: eslintPluginSecurity,
   import: eslintPluginImport,
+  '@typescript-eslint': typescriptEslint.plugin,
 };
 
 export const eslintSettings = {
@@ -89,7 +93,7 @@ export function getDirectoriesToSort() {
       .filter((file) => {
         try {
           return fs.statSync(path.join(process.cwd(), file)).isDirectory();
-        } catch (error) {
+        } catch {
           return false;
         }
       })
@@ -101,18 +105,18 @@ export function getDirectoriesToSort() {
 
 export default typescriptEslint.config(
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['**/*.ts', '**/*.tsx', '**/*.e2e-spec.ts'],
     ...typescriptEslintConfig,
     ignores: eslintIgnore,
   },
   eslint.configs.recommended,
-  ...typescriptEslint.configs.recommendedTypeChecked,
   {
     plugins: {
       ...eslintPluginsConfig,
       prettier: eslintPluginPrettier,
     },
     rules: {
+      'no-unused-vars': 'off',
       'security/detect-eval-with-expression': 'warn',
       'security/detect-no-csrf-before-method-override': 'warn',
       'security/detect-possible-timing-attacks': 'warn',
@@ -120,35 +124,32 @@ export default typescriptEslint.config(
       'no-eval': 'warn',
       'no-implied-eval': 'warn',
       'no-new-func': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/ban-ts-comment': 'warn',
-      '@typescript-eslint/no-floating-promises': 'warn',
-      '@typescript-eslint/no-unsafe-argument': 'warn',
-      '@typescript-eslint/no-unsafe-assignment': 'warn',
-      '@typescript-eslint/no-unsafe-call': 'warn',
-      '@typescript-eslint/no-unsafe-return': 'warn',
-      '@typescript-eslint/await-thenable': 'warn',
-      '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
-      '@typescript-eslint/no-misused-promises': 'warn',
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        {
-          argsIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-        },
-      ],
+      // '@typescript-eslint/no-explicit-any': 'warn',
+      // '@typescript-eslint/ban-ts-comment': 'warn',
+      // '@typescript-eslint/no-floating-promises': 'warn',
+      // '@typescript-eslint/no-unsafe-argument': 'warn',
+      // '@typescript-eslint/no-unsafe-assignment': 'warn',
+      // '@typescript-eslint/no-unsafe-call': 'warn',
+      // '@typescript-eslint/no-unsafe-return': 'warn',
+      // '@typescript-eslint/await-thenable': 'warn',
+      // '@typescript-eslint/no-unnecessary-type-assertion': 'warn',
+      // '@typescript-eslint/no-misused-promises': 'warn',
+
       'import/no-duplicates': 'warn',
       'import/newline-after-import': 'warn',
       'import/first': 'warn',
       'import/no-cycle': 'warn',
       'unused-imports/no-unused-imports': 'warn',
-      'unused-imports/no-unused-vars': [
+      'no-undef': 'off',
+      '@typescript-eslint/no-unused-vars': [
         'warn',
         {
           vars: 'all',
           varsIgnorePattern: '^_',
           args: 'after-used',
           argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+          caughtErrors: 'none',
         },
       ],
       'no-console': ['warn', { allow: ['warn', 'error', 'info'] }],
