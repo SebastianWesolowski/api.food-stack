@@ -29,7 +29,9 @@ export class DietsController {
   })
   @UseInterceptors(AddAssignedDateInterceptor)
   @ZodValidate(GenerateDietRequestSchema, GeneratedDietSchema.array())
-  generateDiet(@Body() data: GenerateDietRequestType): GeneratedDietType[] {
-    return this.dietsService.generateDiet(data);
+  async generateDiet(
+    @Body() data: GenerateDietRequestType,
+  ): Promise<GeneratedDietType[]> {
+    return await this.dietsService.generateDiet(data);
   }
 }
