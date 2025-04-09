@@ -55,9 +55,3 @@ npm-debug.log*
 # build
 lib/*
 dist/*
-
-# Compiled Netlify Functions
-/src/netlify-functions/server.js
-
-# Local Netlify folder
-.netlify

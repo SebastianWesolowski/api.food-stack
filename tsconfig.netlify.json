@@ -1,8 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "outDir": "./dist/functions",
-    "rootDir": "./src"
-  },
-  "include": ["src/netlify-functions/**/*"]
-}
